@@ -1,0 +1,10 @@
+personal:
+  username: johnnyfive
+  email: me@johnsmith.com
+  name: Johnny Smith
+  ssh: ~/.ssh/id_rsa
+work:
+  username: johnsmith
+  email: john@defmethod.io
+  name: John Smith
+  ssh: ~/.ssh/defmethod_rsa
