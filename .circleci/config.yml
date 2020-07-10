@@ -12,4 +12,7 @@ jobs:
       - run:
           name: Which bundler?
           command: bundle -v
+      - run:
+          name: Install bundler
+          command: gem install bundler -v 2.1.4
       - ruby/bundle-install
