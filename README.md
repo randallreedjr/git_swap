@@ -27,7 +27,7 @@ If you use rvm, you can save yourself from some headaches by installing git_swap
 $ rvm @global do gem install git_swap
 ```
 
-If transitioning from `git_swap`, version 0.5.0 or earlier, to `git_swap` version 1.0.0 or later, run this command to preserve your current configuration.
+If transitioning from `git_switch`, version 0.5.0 or earlier, to `git_swap` version 1.0.0 or later, run this command to preserve your current configuration.
 
 ```
 cp ~/.gitswitch ~/.gitswap && rm ~/.gitswitch
