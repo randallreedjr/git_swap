@@ -3,7 +3,7 @@
 
 # Git Swap
 
-**Git Switch is now Git Swap. Due to git releasing a native `switch` command, the gem has been renamed.**
+**[Git Switch](https://github.com/randallreedjr/git_switch) is now Git Swap. Due to git releasing a native `switch` command, the gem has been renamed.**
 
 Git Swap is a command line utility to easily swap between multiple git profiles. It uses a `.gitswap` YAML file to configure each profile (name, username, and email) and ssh key.
 
