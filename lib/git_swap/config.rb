@@ -52,6 +52,8 @@ module GitSwap
     end
 
     def edit!
+      # We are using the same message as git rebase -i
+      print "hint: Waiting for your editor to close the file..."
       system("#{ENV['EDITOR']} '#{File.expand_path('~/.gitswap')}'")
     end
 
