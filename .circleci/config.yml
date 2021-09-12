@@ -26,3 +26,11 @@ jobs:
       - checkout
       - ruby/install-deps
       - ruby/rspec-test
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
