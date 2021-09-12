@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7.4
+      - image: cimg/ruby:2.7
     executor: ruby/default
     steps:
       - checkout
@@ -15,4 +15,4 @@ jobs:
       - run:
           name: Install bundler
           command: gem install bundler -v 2.2.10
-      - ruby/bundle-install
+      - ruby/install-deps
