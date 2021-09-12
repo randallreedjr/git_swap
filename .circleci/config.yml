@@ -1,11 +1,11 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2
+  ruby: circleci/ruby@1.1.4
 
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: cimg/ruby:2.7.4
     executor: ruby/default
     steps:
       - checkout
@@ -14,5 +14,5 @@ jobs:
           command: bundle -v
       - run:
           name: Install bundler
-          command: gem install bundler -v 2.1.4
+          command: gem install bundler -v 2.2.10
       - ruby/bundle-install
