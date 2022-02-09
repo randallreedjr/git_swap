@@ -80,10 +80,11 @@ module GitSwap
 
     def set_ssh
       `git config #{git_config_flag} core.sshCommand "#{ssh_command}"`
+      # Include the --apple-use-keychain option to retrieve the passphrase
       if options.verbose?
-        `ssh-add #{ssh}`
+        `ssh-add --apple-use-keychain #{ssh}`
       else
-        `ssh-add #{ssh} 2>/dev/null`
+        `ssh-add --apple-use-keychain #{ssh} 2>/dev/null`
       end
     end
 
