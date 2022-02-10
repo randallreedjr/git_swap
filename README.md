@@ -28,13 +28,13 @@ git swap -v
 This gem is not intended to be installed via a Gemfile. Instead, install it yourself:
 
 ```
-$ gem install git_swap
+gem install git_swap
 ```
 
 If you use rvm, you can save yourself from some headaches by installing git_swap for all gemsets.
 
 ```
-$ rvm @global do gem install git_swap
+rvm @global do gem install git_swap
 ```
 
 If transitioning from `git_switch`, version 0.5.0 or earlier, to `git_swap` version 1.0.0 or later, run this command to preserve your current configuration.
@@ -71,8 +71,8 @@ The root keys can be any nickname you want. It should be memorable to make it ea
 Git Swap follows the convention to create a custom git command. It can be invoked as follows, to either set your git profile locally (no flag) or globally (`-g`):
 
 ```
-$ git swap personal
-$ git swap personal -g
+git swap personal
+git swap personal -g
 ```
 
 Note that in previous versions, invoking `git swap` would remove all identities from `ssh-add`, except the one specified. You can always readd them using `ssh-add path/to/ssh`.
