@@ -15,6 +15,16 @@ Additionally, it requires git version 2.10+. Run `git --version` to check your c
 
 ## Installation
 
+### Install with Homebrew
+The [Homebrew tap](https://github.com/randallreedjr/homebrew-git_swap/) installs the git swap utility globally, and solves the issue with the gem method, which limited the executable to the current gemset.
+
+```
+brew tap randallreedjr/git_swap
+brew install git_swap
+git swap -v
+```
+
+### Install with rubygems
 This gem is not intended to be installed via a Gemfile. Instead, install it yourself:
 
 ```
