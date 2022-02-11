@@ -93,13 +93,11 @@ git swap personal -v
 
 ## Releasing
 To release a new version of the gem:
-* Once changes for release have been merged into `develop` branch, merge the `develop` branch into `master`.
-* Create a new release branch (`releases/vx.y.z`) off `master`.
+* Create a new release branch (`releases/vx.y.z`) off `main`.
 * Bump the version number in [lib/git_swap/version.rb](https://github.com/randallreedjr/git_swap/blob/develop/lib/git_swap/version.rb).
 * Rerun `bundle` to update Gemfile.lock
-* Open a pull request to the `master` branch
+* Open a pull request to the `main` branch
 * Merge pull request and create a tag
-* Delete the `develop` branch and recreate from `master`
 * Build the new version of the gem - `gem build git_swap.gemspec`
 * Push the gem to rubygems from the `master` branch; this is the only branch from which releases should be deployed - `gem push git_swap-x.y.z.gem`
 
