@@ -1,3 +1,3 @@
 module GitSwap
-  VERSION = "1.1.4" unless defined? VERSION
+  VERSION = "1.1.5" unless defined? VERSION
 end
