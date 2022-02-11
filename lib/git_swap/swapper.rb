@@ -1,11 +1,8 @@
 require_relative './version'
-require 'active_support/core_ext/module/delegation'
 
 module GitSwap
   class Swapper
     attr_reader :config, :options
-    delegate :usage?, :config?, :edit?, :list?, :version?, :global?, to: :options
-    delegate :profile, :name, :username, :email, :ssh, :ssh_command, :print_list, :configure!, :edit!, :valid_profile?, to: :config
 
     def initialize(args)
       raise ArgumentError unless args.is_a? Array
@@ -63,6 +60,20 @@ module GitSwap
         puts `ssh-add -l`
       else
         puts "Swapped to profile #{profile}"
+      end
+    end
+
+    # Use method_missing for delegation
+    # Original ActiveSupport version
+    # delegate :usage?, :config?, :edit?, :list?, :version?, :global?, to: :options
+    # delegate :profile, :name, :username, :email, :ssh, :ssh_command, :print_list, :configure!, :edit!, :valid_profile?, to: :config
+    def method_missing(method, *args)
+      if @options.respond_to?(method)
+        @options.send(method, *args)
+      elsif @config.respond_to?(method)
+        @config.send(method, *args)
+      else
+        super
       end
     end
 
