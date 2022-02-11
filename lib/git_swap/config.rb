@@ -121,7 +121,8 @@ module GitSwap
     private
 
     def load!
-      # TODO: RCR - Handle missing or empty config file
+      # If configuration file hasn't been created yet, load an empty hash
+      return {} unless File.file?(File.expand_path('~/.gitswap'))
       YAML.load_file(File.expand_path('~/.gitswap')) || {}
     end
 
