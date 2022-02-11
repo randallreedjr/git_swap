@@ -19,8 +19,11 @@ Additionally, it requires git version 2.10+. Run `git --version` to check your c
 The [Homebrew tap](https://github.com/randallreedjr/homebrew-git_swap/) installs the git swap utility globally, and solves the issue with the gem method, which limited the executable to the current gemset.
 
 ```
-brew tap randallreedjr/git_swap
-brew install git_swap
+brew install randallreedjr/git_swap/git_swap
+```
+
+To verify successful installation:
+```
 git swap -v
 ```
 
