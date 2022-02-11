@@ -20,6 +20,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    # Use fixture file by default
     allow(File).to receive(:expand_path).and_call_original
     allow(File).to receive(:expand_path).with('~/.gitswap').and_return(File.expand_path('spec/fixtures/.gitswap'))
   end

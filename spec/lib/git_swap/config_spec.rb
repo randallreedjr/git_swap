@@ -1,6 +1,19 @@
 require 'spec_helper'
 
 RSpec.describe GitSwap::Config do
+  describe 'initialize' do
+    context 'when .gitswap file does not exist' do
+      before :each do
+        allow(File).to receive(:expand_path).with('~/.gitswap').and_return(File.expand_path('spec/fixtures/.nofile'))
+      end
+      let(:config) { GitSwap::Config.new(['personal']) }
+
+      it 'does not error' do
+        expect(config.profiles).to eq Hash.new
+      end
+    end
+  end
+
   describe 'profile attributes' do
     let(:config) { GitSwap::Config.new(['personal']) }
 
