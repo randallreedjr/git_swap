@@ -20,7 +20,7 @@ module GitSwap
     # Returns the git root directory given a path inside the repo. Returns nil if
     # the path is not in a git repo.
     def self.find_git_repo(start_path = '.')
-      raise NoSuchPathError unless File.exists?(start_path)
+      raise NoSuchPathError unless File.exist?(start_path)
 
       current_path = File.expand_path(start_path)
 
@@ -29,7 +29,7 @@ module GitSwap
       return_path = nil
 
       until root_directory?(current_path)
-        if File.exists?(File.join(current_path, '.git'))
+        if File.exist?(File.join(current_path, '.git'))
           # done
           return_path = current_path
           break
